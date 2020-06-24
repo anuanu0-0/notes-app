@@ -8,7 +8,8 @@ A simple notes app using node.js.
 * Read note
 
 #### npm packages used are: 
-chalk: For printing stylized messages i terminal
+chalk: For printing stylized messages in terminal
+
 yargs: For parsing input string 
 
 Storage: JSON
