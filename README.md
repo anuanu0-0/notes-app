@@ -1,5 +1,5 @@
 # Note app
-A simple notes app using node.js.
+A simple note taking app via terminal using node.js.
 
 ### Command line operations
 * Add note
