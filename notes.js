@@ -49,12 +49,13 @@ const listNotes = () => {
 //  Read a note
 const readNote = (title) => {
   const notes = loadNotes();
-  const findNote = notes.find((note) => note.title === title);
+  const foundNote = notes.find((note) => note.title === title);
 
-  if (findNote) {
-    console.log(this.body);
+  if (foundNote) {
+    console.log(chalk.inverse(foundNote.title));
+    console.log(foundNote.body);
   } else {
-    console.log("No note found");
+    console.log(chalk.red.inverse("Note not found"));
   }
 };
 
