@@ -8,9 +8,9 @@ const getNotes = (string) => "Hello " + string;
 // Add Note
 const addNote = (title, body) => {
   const notes = loadNotes();
-  const duplicateNotes = notes.filter((note) => note.title === title);
 
-  if (duplicateNotes.length == 0) {
+  const duplicateNote = notes.find((note) => note.title === title);
+  if (!duplicateNote) {
     notes.push({
       title: title,
       body: body,
@@ -42,8 +42,20 @@ const listNotes = () => {
   const notes = loadNotes();
   console.log(chalk.blue.inverse("Your notes!!"));
   notes.forEach((note) => {
-    console.log(note.title + ":  " + note.body);
+    console.log(note.title);
   });
+};
+
+//  Read a note
+const readNote = (title) => {
+  const notes = loadNotes();
+  const findNote = notes.find((note) => note.title === title);
+
+  if (findNote) {
+    console.log(this.body);
+  } else {
+    console.log("No note found");
+  }
 };
 
 //  Save note to JSON
@@ -69,4 +81,5 @@ module.exports = {
   addNote: addNote,
   removeNote: removeNote,
   listNotes: listNotes,
+  readNote: readNote,
 };
