@@ -5,6 +5,7 @@ const { boolean } = require("yargs");
 
 const getNotes = (string) => "Hello " + string;
 
+// Add Note
 const addNote = (title, body) => {
   const notes = loadNotes();
   const duplicateNotes = notes.filter((note) => note.title === title);
@@ -22,6 +23,7 @@ const addNote = (title, body) => {
   }
 };
 
+// Remove Note
 const removeNote = (title) => {
   const notes = loadNotes();
 
@@ -35,17 +37,29 @@ const removeNote = (title) => {
   }
 };
 
+//  List all notes
+const listNotes = () => {
+  const notes = loadNotes();
+  console.log(chalk.blue.inverse("Your notes!!"));
+  notes.forEach((note) => {
+    console.log(note.title + ":  " + note.body);
+  });
+};
+
+//  Save note to JSON
 const saveNotes = (notes) => {
   const dataJSON = JSON.stringify(notes);
   fs.writeFileSync("notes.json", dataJSON);
 };
 
+//  Load note from JSON and parse it.
 const loadNotes = () => {
   try {
     const dataBuffer = fs.readFileSync("notes.json");
     const dataJSON = dataBuffer.toString();
     return JSON.parse(dataJSON);
   } catch (e) {
+    //  if no note present return empty array.
     return [];
   }
 };
@@ -54,4 +68,5 @@ module.exports = {
   getNotes: getNotes,
   addNote: addNote,
   removeNote: removeNote,
+  listNotes: listNotes,
 };
