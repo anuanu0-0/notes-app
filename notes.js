@@ -3,8 +3,6 @@ const fs = require("fs");
 const { stringify } = require("querystring");
 const { boolean } = require("yargs");
 
-const getNotes = (string) => "Hello " + string;
-
 // Add Note
 const addNote = (title, body) => {
   const notes = loadNotes();
@@ -78,7 +76,6 @@ const loadNotes = () => {
 };
 
 module.exports = {
-  getNotes: getNotes,
   addNote: addNote,
   removeNote: removeNote,
   listNotes: listNotes,

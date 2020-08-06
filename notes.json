@@ -1,6 +1,1 @@
-[
-  { "title": "test1", "body": "Coding js" },
-  { "title": "test2", "body": "Also doing data structures and algorithms" },
-  { "title": "test3", "body": "Interested in AI and DL" },
-  { "title": "Question", "body": "Are u too interested in node.js" }
-]
+[{"title":"test1","body":"Coding js"},{"title":"test2","body":"Also doing data structures and algorithms"},{"title":"test3","body":"Interested in AI and DL"},{"title":"Question","body":"Are u too interested in node.js"},{"title":"test","body":"geeks"},{"title":"Testing","body":"body"},{"title":"geek","body":"simple notes app"},{"title":"t1","body":"test"}]
